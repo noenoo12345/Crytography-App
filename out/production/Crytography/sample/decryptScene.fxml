@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="rootPane" prefHeight="556.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.decryptController">
+   <children>
+      <VBox layoutX="-1.0" layoutY="-6.0" prefHeight="579.0" prefWidth="179.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="106.0" prefWidth="179.0" style="-fx-background-color: #2be3dd;" text="Crytography">
+               <font>
+                  <Font name="UD Digi Kyokasho N-B" size="24.0" />
+               </font>
+            </Label>
+            <Pane prefHeight="242.0" prefWidth="179.0" style="-fx-background-color: #2be3dd;">
+               <children>
+                  <ToggleButton fx:id="DESBtn" layoutX="21.0" layoutY="20.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="142.0" selected="true" stylesheets="@../style/styleButton1.css" text="DES">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="typeGroup" />
+                     </toggleGroup></ToggleButton>
+                  <ToggleButton fx:id="AESBtn" layoutX="21.0" layoutY="90.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="142.0" stylesheets="@../style/styleButton1.css" text="AES" toggleGroup="$typeGroup" />
+                  <ToggleButton fx:id="RSABtn" layoutX="21.0" layoutY="160.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="142.0" stylesheets="@../style/styleButton1.css" text="RSA" toggleGroup="$typeGroup" />
+               </children>
+            </Pane>
+            <Pane prefHeight="24.0" prefWidth="179.0" />
+            <Pane prefHeight="243.0" prefWidth="179.0" style="-fx-background-color: #2be3dd;">
+               <children>
+                  <ToggleButton fx:id="MD5Btn" layoutX="19.0" layoutY="20.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="142.0" selected="true" stylesheets="@../style/styleButton1.css" text="MD5">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="hashGroup" />
+                     </toggleGroup></ToggleButton>
+                  <ToggleButton fx:id="SHA256Btn" layoutX="19.0" layoutY="160.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="142.0" stylesheets="@../style/styleButton1.css" text="SHA-256" toggleGroup="$hashGroup" />
+                  <ToggleButton fx:id="SHA1Btn" layoutX="19.0" layoutY="90.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="142.0" stylesheets="@../style/styleButton1.css" text="SHA-1" toggleGroup="$hashGroup" />
+               </children>
+            </Pane>
+         </children>
+      </VBox>
+      <Pane layoutX="178.0" prefHeight="91.0" prefWidth="603.0" style="-fx-background-color: #10c7c1;">
+         <children>
+            <ToggleButton fx:id="encryptBtn" layoutX="24.0" layoutY="11.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="260.0" stylesheets="@../style/styleButton2.css" text="Encryption">
+               <toggleGroup>
+                  <ToggleGroup fx:id="modeGroup" />
+               </toggleGroup></ToggleButton>
+            <ToggleButton fx:id="decryptBtn" layoutX="323.0" layoutY="11.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="260.0" selected="true" stylesheets="@../style/styleButton2.css" text="Decryption" toggleGroup="$modeGroup" />
+         </children>
+      </Pane>
+      <Pane layoutX="177.0" layoutY="91.0" prefHeight="481.0" prefWidth="603.0">
+         <children>
+            <Label fx:id="typeModeLabel" alignment="CENTER" layoutX="172.0" prefHeight="54.0" prefWidth="260.0" text="DES MD5">
+               <font>
+                  <Font name="Times New Roman Bold" size="30.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="36.0" layoutY="65.0" prefHeight="30.0" prefWidth="86.0" stylesheets="@../style/styleLabel1.css" text="Mode" />
+            <Label alignment="CENTER" layoutX="36.0" layoutY="125.0" prefHeight="30.0" prefWidth="86.0" stylesheets="@../style/styleLabel1.css" text="Input Path" />
+            <Label alignment="CENTER" layoutX="36.0" layoutY="245.0" prefHeight="30.0" prefWidth="86.0" stylesheets="@../style/styleLabel1.css" text="Hash Path" />
+            <Button fx:id="startBtn" layoutX="245.0" layoutY="363.0" mnemonicParsing="false" onAction="#pressStartBtn" prefHeight="54.0" prefWidth="113.0" text="START">
+               <font>
+                  <Font name="Times New Roman Bold" size="18.0" />
+               </font>
+            </Button>
+            <CheckBox fx:id="checkFolder" layoutX="180.0" layoutY="71.0" mnemonicParsing="false" onAction="#checkBoxFolderAction" text="Decrypt Folder" />
+            <Button fx:id="inputPathBtn" layoutX="537.0" layoutY="128.0" mnemonicParsing="false" onAction="#pressInputPathBtn" prefHeight="27.0" prefWidth="28.0" stylesheets="@../style/styleButton3.css" />
+            <TextField fx:id="inputPathTxt" editable="false" layoutX="180.0" layoutY="129.0" prefHeight="25.0" prefWidth="321.0" promptText="Path to input file" />
+            <TextField fx:id="hashPathTxt" editable="false" layoutX="180.0" layoutY="250.0" prefHeight="25.0" prefWidth="321.0" promptText="Path to hash file" />
+            <Label alignment="CENTER" layoutX="36.0" layoutY="305.0" prefHeight="30.0" prefWidth="86.0" stylesheets="@../style/styleLabel1.css" text="Output Path" />
+            <Button fx:id="hashPathBtn" layoutX="537.0" layoutY="248.0" mnemonicParsing="false" onAction="#pressHashPathBtn" prefHeight="27.0" prefWidth="28.0" stylesheets="@../style/styleButton3.css" />
+            <TextField fx:id="outputPathTxt" editable="false" layoutX="180.0" layoutY="310.0" prefHeight="25.0" prefWidth="321.0" promptText="Path to output file" />
+            <Button fx:id="outputPathBtn" layoutX="537.0" layoutY="309.0" mnemonicParsing="false" onAction="#pressOutputPathBtn" prefHeight="27.0" prefWidth="28.0" stylesheets="@../style/styleButton3.css" />
+            <ProgressBar fx:id="progressBar" layoutX="122.0" layoutY="435.0" prefHeight="18.0" prefWidth="442.0" progress="0.0" />
+            <ProgressIndicator fx:id="progressIndicator" layoutX="66.0" layoutY="424.0" progress="0.0" />
+            <Button fx:id="resetBtn" layoutX="528.0" layoutY="375.0" mnemonicParsing="false" onAction="#pressResetBtn" prefHeight="30.0" prefWidth="46.0" text="Reset" />
+            <Label alignment="CENTER" layoutX="36.0" layoutY="185.0" prefHeight="30.0" prefWidth="86.0" stylesheets="@../style/styleLabel1.css" text="Key Path" />
+            <TextField fx:id="inputKeyPathTxt" editable="false" layoutX="180.0" layoutY="189.0" prefHeight="25.0" prefWidth="321.0" promptText="Path to key file" />
+            <Button fx:id="inputKeyPathBtn" layoutX="537.0" layoutY="188.0" mnemonicParsing="false" onAction="#pressInputKeyPathBtn" prefHeight="27.0" prefWidth="28.0" stylesheets="@../style/styleButton3.css" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

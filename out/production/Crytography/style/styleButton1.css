@@ -1,0 +1,27 @@
+.toggle-button{
+    -fx-font-weight: bold;
+    -fx-background-color: #0ec5e6;
+    -fx-text-fill: black;
+    -fx-font-size: 12px;
+}
+
+.toggle-button:hover{
+    -fx-font-weight: bold;
+    -fx-background-color: white;
+    -fx-text-fill: #0ec5e6;
+    -fx-font-size: 16px;
+}
+
+.toggle-button:selected{
+    -fx-font-weight: bold;
+    -fx-background-color: white;
+    -fx-text-fill: black;
+    -fx-font-size: 16px;
+}
+
+.toggle-button:pressed{
+    -fx-font-weight: bold;
+    -fx-background-color: #d5d5db;
+    -fx-text-fill:  #50d5eb;
+    -fx-font-size: 16px;
+}

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: #2A0033;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.encryptController">
+   <children>
+      <Button fx:id="inputPathBtn" layoutX="550.0" layoutY="197.0" mnemonicParsing="false" onAction="#pressInputPathBtn" text="..." />
+      <TextField fx:id="inputPathTxt" editable="false" layoutX="180.0" layoutY="197.0" prefHeight="25.0" prefWidth="341.0" promptText="Path to file" />
+      <Label layoutX="60.0" layoutY="280.0" text="Output File" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="outputPathTxt" editable="false" layoutX="180.0" layoutY="277.0" prefHeight="25.0" prefWidth="341.0" promptText="Path to saved directory" />
+      <Button fx:id="outputPathBtn" layoutX="550.0" layoutY="277.0" mnemonicParsing="false" onAction="#pressOutputPathBtn" text="..." />
+      <ChoiceBox fx:id="typeChoiceBox" layoutX="180.0" layoutY="77.0" prefHeight="20.0" prefWidth="150.0" />
+      <Label layoutX="60.0" layoutY="80.0" text="Type" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="217.0" layoutY="21.0" prefHeight="37.0" prefWidth="167.0" text="Cryptography" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label layoutX="60.0" layoutY="200.0" text="Input File" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="60.0" layoutY="120.0" text="Mode" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="modeChoiceBox" layoutX="180.0" layoutY="117.0" prefWidth="150.0" />
+      <Label fx:id="inputKeyLabel" layoutX="60.0" layoutY="240.0" text="Input Key File" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="inputKeyPathTxt" editable="false" layoutX="180.0" layoutY="237.0" prefHeight="25.0" prefWidth="341.0" promptText="Path to key file" />
+      <Button fx:id="inputKeyPathBtn" layoutX="550.0" layoutY="237.0" mnemonicParsing="false" onAction="#pressInputKeyPathBtn" text="..." />
+      <Button fx:id="startBtn" layoutX="239.0" layoutY="418.0" mnemonicParsing="false" onAction="#pressStartBtn" prefHeight="37.0" prefWidth="122.0" text="Start" />
+      <Label fx:id="keyLabel" layoutX="60.0" layoutY="155.0" text="Key" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <CheckBox fx:id="checkKeyGen" layoutX="180.0" layoutY="157.0" mnemonicParsing="false" onAction="#checkBoxAction" text="Auto Key Generation" textFill="WHITE" />
+      <Label layoutX="60.0" layoutY="320.0" text="Hash Type" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="hashChoiceBox" layoutX="180.0" layoutY="317.0" prefWidth="150.0" />
+      <Label fx:id="hashLabel" layoutX="60.0" layoutY="360.0" text="Hash File" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="hashPathTxt" editable="false" layoutX="180.0" layoutY="357.0" prefHeight="25.0" prefWidth="341.0" promptText="Path to hash file" />
+      <Button fx:id="hashPathBtn" layoutX="550.0" layoutY="357.0" mnemonicParsing="false" onAction="#pressHashPathBtn" text="..." />
+   </children>
+</AnchorPane>
